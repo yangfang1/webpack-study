@@ -11,7 +11,7 @@ class RootComponent extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/test" component={Test}/>
+        <Route  path="/test" component={Test}/>
       </Switch>
     )
   }
