@@ -4,6 +4,7 @@ const MiniCssExtractPlugin=require("mini-css-extract-plugin");
 const {CleanWebpackPlugin}=require("clean-webpack-plugin");
 module.exports={
   mode:"development",//模式，development和production，主要是压缩与不压缩的区别
+  devtool: 'source-map',
   entry:{
     app:path.join(__dirname,'../src/index.js'),
   },//可以只是一个字符串，这样就没有chunkname

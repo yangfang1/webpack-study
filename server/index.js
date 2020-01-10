@@ -5,7 +5,8 @@ const path=require('path')
 const webpackConfig=require('../tools/webpack.config');
 const webpackDevMiddleware=require("webpack-dev-middleware");
 const complier=webpack(webpackConfig);
-const render=require('./render')
+const render=require('./render');
+const route =require('./route')
 const app=express();
 app.disable('etag'); //防止返回状态总是304
 app.use(webpackDevMiddleware(complier,{
@@ -30,6 +31,7 @@ app.get("*", (req, res, next) =>{
       res.end()
   })
 })
+route(app)
 app.listen(8000,()=>{
   console.log("App is on port 8000:http://localhost:8000")
 })
