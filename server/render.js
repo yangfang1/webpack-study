@@ -1,5 +1,4 @@
 import React from 'react' //还是需要引入react
-import Home from '../src/Home/Home' ;//不是直接引入客户端的index
 import {renderToString} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import RootComponent from '../src/route' ;//不是直接引入客户端的index

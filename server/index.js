@@ -17,7 +17,7 @@ app.use(webpackDevMiddleware(complier,{
   },
   serverSideRender:true
 }));
-app.use(express.static(webpackConfig.output.publicPath));//设置项目静态资源的目录,跟下面代码的功能是一致的
+app.use(express.static(webpackConfig.output.publicPath));//设置项目静态资源的目录
 app.get("*", (req, res, next) =>{
   const filename = path.join(path.join(__dirname, "../dist"), 'index.html');
   complier.outputFileSystem.readFile(filename, (err, result) =>{
