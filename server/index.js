@@ -19,6 +19,7 @@ app.use(webpackDevMiddleware(complier,{
   serverSideRender:true
 }));
 app.use(express.static(webpackConfig.output.publicPath));//设置项目静态资源的目录
+route(app)
 app.get("*", (req, res, next) =>{
   const filename = path.join(path.join(__dirname, "../dist"), 'index.html');
   complier.outputFileSystem.readFile(filename, (err, result) =>{
@@ -31,7 +32,6 @@ app.get("*", (req, res, next) =>{
       res.end()
   })
 })
-route(app)
 app.listen(8000,()=>{
   console.log("App is on port 8000:http://localhost:8000")
 })
